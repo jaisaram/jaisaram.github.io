@@ -30,7 +30,7 @@ const Projects = () => {
         "Profile & System Configurations – Full control over user settings, SMTP, OTP, and more"
       ],
       category: "Freelance Project",
-      year: "Des 2024-Present",
+      year: "Dec 2024-Present",
       highlight: true
     },
     {
