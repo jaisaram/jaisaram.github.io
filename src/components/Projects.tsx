@@ -7,12 +7,11 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
   const projects = [
     {
-      name: "Mehuna.in",
+      name: "Mehuna",
       description: "Customer grievance support tool for banking users with dynamic email generation and payment integration.",
       status: "Under Testing",
       techStack: ["React", "Node.js", "TypeScript", "MySQL", "TypeORM", "RabbitMQ", "Redis", "PM2"],
       features: [
-        "Queuing with RabbitMQ and session management with Redis",
         "Dynamic Page Builder – Create custom pages with editable meta title, description, and keywords (SEO ready)",
         "Queue Management with BullMQ + Redis for handling background jobs and async processing",
         "Cron Jobs – Automated scheduling for emails, alerts, and cleanup tasks",
@@ -34,17 +33,32 @@ const Projects = () => {
       highlight: true
     },
     {
-      name: "WinPro (Dummy Name)",
-      description: "Internal gRPC services for microservices communication with separate databases per account.",
+      name: "Enterprise-Grade Banking SaaS Platform",
+      note: "(Unreleased – Strategic Hold)",
+      description: "End-to-end multi-tenant SaaS banking platform with dynamic domain routing, gRPC-based microservices, queue processing, secure onboarding, and DevOps automation.",
       status: "Under Development",
-      techStack: ["React", "Node.js", "gRPC", "Microservices", "TypeScript", "MySQL", "TypeORM", "RabbitMQ", "Redis", "PM2"],
+      techStack: [
+        "React.js", "Redux", "Node.js", "TypeScript", "Express", "gRPC",
+        "Microservices", "MySQL", "TypeORM", "RabbitMQ", "BullMQ", "Redis",
+        "AJV", "PM2", "Linux", "OpenSSL", "MUI", "Zoop API", "SSE"
+      ],
       features: [
-        "Internal gRPC services for Node.js microservices communication",
-        "Separate databases for every account",
-        "Protocol Buffers for efficient, contract-based communication"
+        "Multi-panel RBAC: Admin, Super Admin, Account User, Sub-User",
+        "Internal gRPC services for microservices communication",
+        "Separate MySQL database per account with dynamic pooling",
+        "Dynamic subdomain and custom domain mapping per account",
+        "Email sending via SMTP/Gmail API and OTP-based login",
+        "Queue and cron jobs via RabbitMQ + Redis + BullMQ",
+        "Secure KYC, agreement signing, onboarding flows via Zoop API",
+        "Advance payout, RTGS, and TDS logic based on PAN/Aadhar",
+        "Real-time updates using Server-Sent Events (SSE)",
+        "API Gateway with HTTP Proxy Middleware routing",
+        "Secure server setup with CSURF, rate-limiting, IP blocking, logging",
+        "Auto-deploy with GitHub Actions and PM2 process management",
+        "HTTPS on all domains using OpenSSL"
       ],
       category: "Freelance Project",
-      year: "2023-Present"
+      year: "2023–Present"
     },
     {
       name: "Acquire.io V2",
@@ -99,14 +113,13 @@ const Projects = () => {
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <Card 
-              key={project.name} 
-              className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white relative overflow-hidden ${
-                project.highlight ? 'ring-2 ring-blue-500/20' : ''
-              }`}
+            <Card
+              key={project.name}
+              className={`group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 bg-white relative overflow-hidden ${project.highlight ? 'ring-2 ring-blue-500/20' : ''
+                }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {project.highlight && (
@@ -117,9 +130,9 @@ const Projects = () => {
                   </div>
                 </div>
               )}
-              
+
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-              
+
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between flex-wrap gap-3 mb-3">
                   <div className="flex-1">
@@ -132,9 +145,9 @@ const Projects = () => {
                           size="sm"
                           className="h-auto p-1 text-blue-600 hover:text-blue-800 hover:bg-blue-50"
                         >
-                          <a 
-                            href={project.link} 
-                            target="_blank" 
+                          <a
+                            href={project.link}
+                            target="_blank"
                             rel="noopener noreferrer"
                           >
                             <ExternalLink size={16} />
@@ -143,6 +156,7 @@ const Projects = () => {
                       )}
                     </div>
                     <p className="text-sm text-gray-500 mb-2">{project.category} • {project.year}</p>
+                    <p className="text-sm text-gray-500 mb-2">{project.note}</p>
                   </div>
                   <Badge className={`${getStatusColor(project.status)} border`}>
                     {project.status}
@@ -150,7 +164,7 @@ const Projects = () => {
                 </div>
                 <p className="text-gray-600 leading-relaxed">{project.description}</p>
               </CardHeader>
-              
+
               <CardContent>
                 <div className="space-y-4">
                   <div>
@@ -164,12 +178,12 @@ const Projects = () => {
                       ))}
                     </ul>
                   </div>
-                  
+
                   <div>
                     <h4 className="text-sm font-semibold text-gray-900 mb-2">Tech Stack:</h4>
                     <div className="flex flex-wrap gap-2">
                       {project.techStack.map((tech) => (
-                        <span 
+                        <span
                           key={tech}
                           className="px-2 py-1 bg-gradient-to-r from-blue-50 to-purple-50 text-blue-700 rounded text-xs font-medium border border-blue-100 hover:border-blue-200 transition-colors"
                         >
@@ -183,9 +197,9 @@ const Projects = () => {
             </Card>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
-          <Button 
+          <Button
             asChild
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
           >

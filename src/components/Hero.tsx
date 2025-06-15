@@ -72,7 +72,7 @@ const Hero = () => {
               size="lg"
               className="border-blue-400 text-blue-400 hover:bg-green-500/10 px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
             >
-              <a href="/public/resume _jaisaram_jangid.pdf" download>
+              <a href="/resume _jaisaram_jangid.pdf" download>
                 <Download className="w-4 h-4 mr-2" />
                 Download CV
               </a>
