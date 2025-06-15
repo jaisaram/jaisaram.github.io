@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
+import GithubAnalytics from "@/components/GithubAnalytics";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Summary />
       <Skills />
       <Projects />
+      <GithubAnalytics />
       <Experience />
       <Education />
       <Contact />
