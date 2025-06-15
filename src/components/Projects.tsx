@@ -21,7 +21,7 @@ const Projects = () => {
       highlight: true
     },
     {
-      name: "WinPro",
+      name: "WinPro (Dummy Name)",
       description: "Internal gRPC services for microservices communication with separate databases per account.",
       status: "Under Development",
       techStack: ["React", "Node.js", "gRPC", "Microservices", "TypeScript", "MySQL", "TypeORM", "RabbitMQ", "Redis", "PM2"],

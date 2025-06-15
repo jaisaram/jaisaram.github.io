@@ -17,7 +17,7 @@ const Experience = () => {
           description: "Customer grievance support tool for banking users with dynamic email generation and payment integration."
         },
         {
-          name: "WinPro",
+          name: "WinPro (Dummy Name)",
           status: "Under Development", 
           techStack: ["React", "Node.js", "gRPC", "Microservices", "TypeScript", "MySQL", "TypeORM", "RabbitMQ", "Redis", "PM2"],
           description: "Internal gRPC services for microservices communication with separate databases per account."
